@@ -1,0 +1,22 @@
+name: Variables de entorno globales
+
+on:
+  workflow_dispatch:
+
+env:
+  MENSAJE: "Hola desde una variable global"
+
+jobs:
+  primer_job:
+    name: Primer job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar variable global
+        run: echo "Job 1 dice: $MENSAJE"
+
+  segundo_job:
+    name: Segundo job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar la misma variable global
+        run: echo "Job 2 dice: $MENSAJE"
