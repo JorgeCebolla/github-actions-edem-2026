@@ -1,0 +1,8 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  say_hello:
+  runs-on: ubunu-latest
+  steps:
+    -run: echo "Hello there!"
