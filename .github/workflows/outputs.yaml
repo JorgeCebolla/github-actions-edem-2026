@@ -1,0 +1,15 @@
+name: Se acabó la fiesta
+on:
+  workflow_dispatch:
+jobs:
+  say_hello:
+    name: "let's greet the user!"
+    runs-on: ubuntu-latest
+    steps:
+      - id: get-time
+        name: Grab the current time
+        run: |
+          curTime=$(date)
+          echo "currenttime=$curTime" >> "$GITHUB_OUTPUT"
+      - name: Display the time
+        run: echo "The time from the earlier step is ${{ steps.get-time.outputs.currenttime }}"
