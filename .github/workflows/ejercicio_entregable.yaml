@@ -1,10 +1,10 @@
-name: Ejercicio Entregable
+﻿name: Ejercicio Entregable
 
 on:
   workflow_dispatch:
     inputs:
       ejecutar_test_seguridad:
-        description: "¿Quieres ejecutar los tests de seguridad?"
+        description: "Â¿Quieres ejecutar los tests de seguridad?"
         required: true
         type: boolean
         default: false
@@ -13,10 +13,10 @@ jobs:
   ci-seguridad:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el código
+      - name: Descargar el cÃ³digo
         uses: actions/checkout@v4
 
-      - name: Validar que ventas.json es JSON válido
+      - name: Validar que ventas.json es JSON vÃ¡lido
         run: python -m json.tool ventas.json > /dev/null
 
       - name: Ejecutar Tests de Seguridad
@@ -30,7 +30,7 @@ jobs:
       matrix:
         entorno: [staging, production]
     steps:
-      - name: Descargar el código
+      - name: Descargar el cÃ³digo
         uses: actions/checkout@v4
 
       - name: Crear reporte del entorno
@@ -48,7 +48,7 @@ jobs:
     needs: procesamiento
     runs-on: ubuntu-latest
     steps:
-      - name: Simular notificación a Discord
+      - name: Simular notificacion a Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: echo "Notificación simulada. Webhook configurado: ${{ secrets.DISCORD_WEBHOOK != '' }}"
+          WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '''' }}
+        run: echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"
