@@ -1,6 +1,6 @@
 name: Ejercicio Entregable
 
-'on':
+on:
   workflow_dispatch:
     inputs:
       ejecutar_test_seguridad:
