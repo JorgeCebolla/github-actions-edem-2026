@@ -44,11 +44,11 @@ jobs:
           path: reporte-${{ matrix.entorno }}.txt
 
   notificacion-exito:
-    - name: Notificacion simulada
-      needs: procesamiento
-      runs-on: ubuntu-latest
-      steps:
-        - name: Comprobar secreto de Discord
-          env:
-            WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '' }}
-                  run: 'echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"'
+    name: Notificacion simulada
+    needs: procesamiento
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar secreto de Discord
+        env:
+          WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '' }}
+        run: 'echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"'
