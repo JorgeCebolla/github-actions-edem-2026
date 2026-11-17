@@ -51,4 +51,4 @@ jobs:
         - name: Comprobar secreto de Discord
           env:
             WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '' }}
-          run: echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"
+                  run: 'echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"'
