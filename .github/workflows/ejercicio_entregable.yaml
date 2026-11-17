@@ -50,5 +50,5 @@ jobs:
     steps:
       - name: Simular notificacion a Discord
         env:
-          WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '''' }}
+          WEBHOOK_CONFIGURADO: ${{ secrets.DISCORD_WEBHOOK != '' }}
         run: echo "Notificacion simulada. Webhook configurado: $WEBHOOK_CONFIGURADO"
